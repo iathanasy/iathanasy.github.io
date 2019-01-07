@@ -79,4 +79,4 @@ theme: polarbear    #模板选择
 deploy:
   type: git
   repo: https://github.com/iathanasy/iathanasy.github.io.git
-  #branch: master
+  branch: master
