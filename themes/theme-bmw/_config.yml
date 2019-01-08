@@ -74,7 +74,7 @@ footer:
 leancloud:
   appid: Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz # 填写您的appid
   appkey: WaR7nrzhliHj9aVwdQzkdlGd # 填写您的appkey
-  comment: true # 是否开启评论系统
+  comment: false # 是否开启评论系统
   timer: true # 是否开启文章统计
 
 # 导航栏头部名称
@@ -103,7 +103,7 @@ nav:
     name: 关于
     path: /about/
   - 
-    name: 抓到我
+    name: 外链
     children:
       -
         name: Github
