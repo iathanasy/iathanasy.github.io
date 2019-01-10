@@ -118,7 +118,7 @@ nav:
 friends:
   -
     nickname: 博客园 # 昵称
-    avatar: https://gravatar.loli.net/avatar/b20750c40cd911256ddbd76a7f7e724c # 头像链接
+    avatar: http://gravatar.loli.net/avatar/5ae9da6fd672e3476c2abb2223e9d89f?d=identicon # 头像链接
     site: https://www.cnblogs.com/iathanasy # 站点地址
     meta: 博客园地址 # 站点描述
     
