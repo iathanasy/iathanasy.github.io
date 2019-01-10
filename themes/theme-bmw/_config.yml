@@ -7,7 +7,7 @@ favicon:
   touch_icon: /images/touch-icon.png
 
 # RSS文件位置
-rss: 
+rss: /atom.xml
 
 # 自定义样式文件位置
 custom_style: 
@@ -103,16 +103,16 @@ nav:
     name: 关于
     path: /about/
   - 
-    name: 外链
+    name: 音乐
     children:
       -
-        name: Github
-        path: "https://github.com/iathanasy"
-        blank: true
+        name: "音乐"
+        path: /categories/音乐/
+        blank: false
       -
-        name: "博客园"
-        path: "https://www.cnblogs.com/iathanasy"
-        blank: true
+        name: "另类"
+        path: /categories/另类/
+        blank: false
 
 # 友链详细信息：支持多个友链
 friends:

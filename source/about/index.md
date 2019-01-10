@@ -47,7 +47,8 @@ date: 2019-01-07 10:12:30
 
 - [Cron表达式生成器](https://iathanasy.github.io/cron)
 - [在线MarkDown编辑器](https://www.mdeditor.com)
-
+- [在线MarkDown编辑器](https://www.mdeditor.com)
+- [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
 ## MyMusic
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=988690134&auto=1&height=430"></iframe>
