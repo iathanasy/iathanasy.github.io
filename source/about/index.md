@@ -55,3 +55,8 @@ playlist:
 - [在线MarkDown编辑器](https://www.mdeditor.com)
 - [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
 - [在线加解密工具](http://tool.oschina.net/encrypt?type=2)
+
+
+## 不错的资料
+
+- [VisualVM性能分析](https://www.cnblogs.com/wade-xu/p/4369094.html)
