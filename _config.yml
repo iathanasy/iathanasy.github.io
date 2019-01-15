@@ -25,7 +25,7 @@ archive_dir: archives       #归档文件夹
 category_dir: categories    #分类文件夹
 code_dir: downloads/code    #nclude code 文件夹
 i18n_dir: :lang             #国际化（i18n）文件夹
-skip_render:                #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
+skip_render: ['*.html', markdown/**,html/**]  #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
 
 # Writing   文章
 new_post_name: :title.md   # File name of new posts 新建文章默认文件名
