@@ -113,7 +113,10 @@ nav:
         name: "另类"
         path: /categories/另类/
         blank: false
-
+  - 
+    name: 作息
+    path: /html/rest/
+    blank: true
 # 友链详细信息：支持多个友链
 friends:
   -
