@@ -129,7 +129,7 @@ h2{
 		background: #fff;
 }
 body{
-	background: #f00;
+	/**background: #f00;**/
 	padding:0;
 	margin:0;
 }
