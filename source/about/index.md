@@ -53,6 +53,7 @@ playlist:
 
 - [Cron表达式生成器](https://iathanasy.github.io/html/cron)
 - [在线MarkDown编辑器](https://iathanasy.github.io/html/markdown)
+- [在线Excel函数查询手册](https://iathanasy.github.io/html/excel)
 - [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
 - [在线加解密工具](http://tool.oschina.net/encrypt?type=2)
 
