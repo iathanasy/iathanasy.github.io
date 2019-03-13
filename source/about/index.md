@@ -56,6 +56,7 @@ playlist:
 - [在线Excel函数查询手册](https://iathanasy.github.io/html/excel)
 - [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
 - [在线加解密工具](http://tool.oschina.net/encrypt?type=2)
+- [Free-SS-SSR](https://dxxzst.github.io/Free-SS-SSR)
 
 
 ## 不错的资料
