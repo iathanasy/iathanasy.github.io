@@ -57,6 +57,7 @@ playlist:
 - [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
 - [在线加解密工具](http://tool.oschina.net/encrypt?type=2)
 - [Free-SS-SSR](https://dxxzst.github.io/Free-SS-SSR)
+- [在线文档生成](https://www.vuepress.cn/)
 
 
 ## 不错的资料

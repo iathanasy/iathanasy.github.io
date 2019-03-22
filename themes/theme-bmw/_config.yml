@@ -30,7 +30,7 @@ toc: true
 mathjax: true
 
 # 是否开启 音乐组件
-player: true
+player: false
 
 # 是否开启 分享功能: https://github.com/overtrue/share.js
 social_share:
@@ -102,17 +102,17 @@ nav:
   - 
     name: 关于
     path: /about/
-  - 
-    name: 音乐
-    children:
-      -
-        name: "音乐"
-        path: /categories/音乐/
-        blank: false
-      -
-        name: "另类"
-        path: /categories/另类/
-        blank: false
+  #- 
+    #name: 音乐
+    #children:
+      #-
+        #name: "音乐"
+        #path: /categories/音乐/
+        #blank: false
+      #-
+        #name: "另类"
+        #path: /categories/另类/
+        #blank: false
   - 
     name: 作息
     path: /html/rest/
