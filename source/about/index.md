@@ -1,12 +1,12 @@
 ---
 title: 关于我
 date: 2019-01-07 10:12:30
-playlist:
-  -
-    name: 纸短情长
-    artist: 烟把儿乐队
-    url: "http://wsaudio.bssdlbig.kugou.com/1901101111/-F2J7XZf5S9K19yktDnPcw/1547176284/bss/extname/wsaudio/f12c21698119de686ee4731142862da2.mp3"
-    cover: "http://wsing.bssdl.kugou.com/697340812df61004b411cb9161b3e367.jpg_188x188.jpg?param=130y130"
+#playlist:
+ # -
+  #  name: 纸短情长
+   # artist: 烟把儿乐队
+   # url: "http://wsaudio.bssdlbig.kugou.com/1901101111/-F2J7XZf5S9K19yktDnPcw/1547176284/bss/extname/wsaudio/f12c21698119de686ee4731142862da2.mp3"
+   # cover: "http://wsing.bssdl.kugou.com/697340812df61004b411cb9161b3e367.jpg_188x188.jpg?param=130y130"
 ---
 ## 前言
 - 该网站为个人技术博客网站, 主要用于记录个人的一些学习心得和技术笔记, 偶尔也会吐槽吐槽

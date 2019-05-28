@@ -96,9 +96,9 @@ nav:
   -
     name: 标签
     path: /tags/
-  -
-    name: 友链
-    path: /friends/
+  #-
+    #name: 友链
+    #path: /friends/
   - 
     name: 关于
     path: /about/
@@ -117,6 +117,11 @@ nav:
     name: 作息
     path: /html/rest/
     blank: true
+  - 
+    name: 实验室
+    path: /html/laboratory/
+    blank: true
+    
 # 友链详细信息：支持多个友链
 friends:
   -
