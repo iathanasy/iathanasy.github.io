@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>MarkDown</title>
+    <link href="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css" rel="stylesheet">
+</head>
+<body>
+<textarea></textarea>
+<script src="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.js"></script>
+<script>
+    var simplemde = new SimpleMDE();
+	simplemde.codemirror.on("change", function(){
+		var markdown = simplemde.value();
+		console.log(markdown);
+		html = simplemde.markdown(markdown);
+		console.log(html);
+	});
+</script>
+</body>
+</html>

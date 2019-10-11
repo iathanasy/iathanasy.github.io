@@ -53,6 +53,7 @@ date: 2019-01-07 10:12:30
 
 - [Cron表达式生成器](https://iathanasy.github.io/html/cron)
 - [在线MarkDown编辑器](https://iathanasy.github.io/html/markdown)
+- [简洁MarkDown编辑器](https://iathanasy.github.io/html/simplemde-markdown-editor)
 - [在线Excel函数查询手册](https://iathanasy.github.io/html/excel)
 - [纯前端字母头像插件](https://iathanasy.github.io/html/avatar)
 - [5sing解析音乐地址](https://www.huyahaha.com/index/sing5)
