@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/**引入font-face.css**/
+@import "font-face.css";
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.md_editor_container {
+    clear: both;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+.md_editor_container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.md_editor_input, .md_editor_output {
+  float: left;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  font-size: 16px;
+}
+
+.md_editor_input .CodeMirror {
+  width: 100%!important;
+  height: 100%;
+  font-family: "YaHei Consolas Hybrid", Consolas, "微软雅黑", "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, "Monaco", courier, monospace;
+  line-height: 1.6;
+}
+.md_editor_input .CodeMirror pre {
+  padding: 0 10px;
+}
+.md_editor_input .CodeMirror-linenumbers {
+  padding: 0 5px;
+}
+.md_editor_input .CodeMirror-selected {
+  background: #70B7FF;
+}
+.md_editor_input .CodeMirror-focused .CodeMirror-selected {
+  background: #70B7FF;
+}
+.md_editor_input .CodeMirror, .md_editor_input .CodeMirror-scroll, .md_editor_input .editormd-preview {
+  -webkit-overflow-scrolling: touch;
+}
+.md_editor_input .styled-background {
+  background-color: #ff7;
+}
+.md_editor_input .CodeMirror-focused .cm-matchhighlight {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+.md_editor_input .CodeMirror-empty.CodeMirror-focused {
+  outline: none;
+}
+.md_editor_input .CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
+}
+
+
+
+.md_editor_output {
+    padding: 10px;
+    float: left;
+    min-height: 340px;
+    background: #fbfbfb;
+    overflow: auto;
+}
+
+.md_editor_output .markdown-body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 980px;
+  padding: 20px;
+}
+
+/**工具栏*/
+.md_editor_toolbar {
+    width: 100%;
+    line-height: 24px;
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.06);
+    position: relative;
+}
+
+.md_editor_toolbar i {
+    fill: currentColor;
+    display: inline-block;
+    stroke-width: 0;
+    stroke: currentColor;
+    width: 14px;
+    height: 14px;
+}
+
+.md_editor_toolbar i:hover {
+    color: #4285f4;
+	cursor: default;
+}
+.md_editor_toolbar > span i, .md_editor_toolbar > a i {
+    color: #616161;
+    float: left;
+    margin: 10px 8px;
+}
+
+.md_editor_toolbar > span .md_editor_bold {
+  padding: 0px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.md_editor_toolbar input[type='file'] {
+    position: absolute;
+    width: 1px;
+    opacity: 0.001;
+    overflow: hidden;
+}
+
+.md_editor_toolbar .md_editor_sticker {
+    display: none;
+    position: absolute;
+    left: 3px;
+    background-color: #FFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    z-index: 10;
+    width: 365px;
+    max-width: 365px;
+}
+
+.md_editor_sticker img {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+}
+
+.md_editor_sticker .sticker_face {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.md_editor_sticker_images {
+    height: 190px;
+}
+
+.md_editor_sticker_page {
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+}
+
+.md_editor_sticker_page span {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background: url("./images/aio_pagebreak_normal@2x.png") no-repeat;
+    background-size: contain;
+}
+
+.md_editor_sticker_page .active {
+    background: url("./images/aio_pagebreak_clicked@2x.png") no-repeat;
+    background-size: contain;
+}
+
+.md_editor_sticker_footer {
+    height: 40px;
+    background-color: #f2f2f2;
+}
+
+.md_editor_sticker_footer ul {
+    margin: 0 0 0 3px;
+    padding: 0;
+    text-align: left;
+    line-height: 40px;
+}
+
+.md_editor_sticker_footer .current {
+    background-color: #fff;
+}
+
+.md_editor_sticker_footer ul li {
+    float: left;
+    list-style: none;
+    width: 50px;
+    text-align: center;
+}
+
+.full_screen{
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+}
+
+.full_screen .md_editor_output{
+  /**height: 100%!important;**/
+}
+
+
+.panel-default > .panel-heading {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header .navbar-nav > .active a, .header .navbar-nav > .active a:focus {
+    background-color: #fff;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+	width: .6rem;
+    height: .6rem;
+}
+ 
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track
+{
+	/**-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);**/
+	webkit-box-shadow: none;
+}
+ 
+/*定义滑块*/
+::-webkit-scrollbar-thumb
+{
+	/**-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);**/
+	background-color: #ccc;
+	outline: none;
+}

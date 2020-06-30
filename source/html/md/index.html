@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MarkDown</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
+	<script src="codemirror/codemirror.js"></script>
+	<!--编辑器高亮显示-->
+	<script src="codemirror/mode/markdown/markdown.js"></script>
+	
+	<!--编辑连续性-->
+	<script src="codemirror/addon/edit/continuelist.js"></script>
+	
+    <script src="js/marked.min.js"></script>
+    <script src="js/prism.js"></script>
+	<script src="js/mdeditor.js"></script>
+
+    
+	<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+	<link rel="stylesheet" href="codemirror/codemirror.css">
+	<link rel="stylesheet" href="codemirror/theme/base16-light.css">
+
+	<link rel="stylesheet" href="css/mdeditor.css">
+	<link rel="stylesheet" href="css/github-markdown.css">
+	<link rel="stylesheet" href="css/prism.css">
+    
+</head>
+<style>
+
+</style>
+<body>
+
+<div id="md_editor">
+
+</div>
+
+<div style="text-align: center;margin-top: 50px;">
+    <input type="button" value="获取编辑器值" id="js_editor_val" class="btn btn-default" />
+	<input type="button" value="获取HTML" id="js_editor_html" class="btn btn-default" />
+</div>
+
+</body>
+<script>
+    (function () {
+        var editor = $('#md_editor').mdEditor({
+            "url": "./api/ab-editor/upload_json.php",
+            "height": 400,
+			"textareaName": "contentMd",
+			"tools": ["bold", "italic", "del", "h1", "hr","quote", "code","link", "upload", "unordered-list", "ordered-list", "view", "fullscreen"]
+        });
+
+
+        $('#js_editor_val').click(function () {
+		console.log($('#contentMd').val());
+            alert(editor.getValue());
+        });
+		$('#js_editor_html').click(function () {
+			alert($('.md_editor_output .markdown-body').html());
+		});
+    })();
+
+</script>
+</html>

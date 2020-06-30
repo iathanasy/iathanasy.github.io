@@ -121,6 +121,10 @@ nav:
     name: 实验室
     path: /html/laboratory/
     blank: true
+  - 
+    name: MarkDown
+    path: /html/md/
+    blank: true
     
 # 友链详细信息：支持多个友链
 friends:
