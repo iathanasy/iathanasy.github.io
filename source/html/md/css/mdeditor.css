@@ -40,6 +40,7 @@
   font-family: "YaHei Consolas Hybrid", Consolas, "微软雅黑", "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, "Monaco", courier, monospace;
   line-height: 1.6;
 }
+/**
 .md_editor_input .CodeMirror pre {
   padding: 0 10px;
 }
@@ -52,24 +53,13 @@
 .md_editor_input .CodeMirror-focused .CodeMirror-selected {
   background: #70B7FF;
 }
-.md_editor_input .CodeMirror, .md_editor_input .CodeMirror-scroll, .md_editor_input .editormd-preview {
-  -webkit-overflow-scrolling: touch;
-}
-.md_editor_input .styled-background {
-  background-color: #ff7;
-}
-.md_editor_input .CodeMirror-focused .cm-matchhighlight {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
-  background-position: bottom;
-  background-repeat: repeat-x;
-}
 .md_editor_input .CodeMirror-empty.CodeMirror-focused {
   outline: none;
 }
 .md_editor_input .CodeMirror pre.CodeMirror-placeholder {
   color: #999;
 }
-
+**/
 
 
 .md_editor_output {
@@ -128,6 +118,7 @@
     overflow: hidden;
 }
 
+/**表情*/
 .md_editor_toolbar .md_editor_sticker {
     display: none;
     position: absolute;
@@ -198,6 +189,7 @@
     text-align: center;
 }
 
+/**全屏*/
 .full_screen{
 	position: fixed;
     top: 0;
@@ -207,9 +199,6 @@
     border: none;
 }
 
-.full_screen .md_editor_output{
-  /**height: 100%!important;**/
-}
 
 
 .panel-default > .panel-heading {

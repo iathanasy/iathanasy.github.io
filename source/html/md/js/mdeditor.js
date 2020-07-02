@@ -21,8 +21,19 @@ var md = {};
        textareaContent = "md_editor_content";
     }
 	
+	/**保存到浏览器*/
+	var storageKey = 'markdoc'
+	
 	//全部工具
 	var allTools = {
+		"emoji": {
+                "onclick": function (item, editor) {
+					editorElement.find(".editor_sticker").toggle();// 显示或隐藏表情包
+					
+                },
+                "title": "Emoji表情",
+				"icons": "fa-smile-o"
+        },
 		"bold": {
                 "onclick": function (item, editor) {
 					var cursor    = editor.getCursor();
@@ -240,7 +251,7 @@ var md = {};
 
 	if (!tools) {
 		// 默认工具栏
-		tools = ["bold", "italic", "del", "h1", "hr","quote", "code","link", "upload", "unordered-list", "ordered-list", "table","code-block","view", "fullscreen"];
+		tools = ["emoji", "bold", "italic", "del", "h1", "hr","quote", "code","link", "upload", "unordered-list", "ordered-list", "table","code-block","view", "fullscreen"];
     }
 
 	//mdeditor
@@ -263,11 +274,12 @@ var md = {};
 		}
 	});
 
-	html += "\t\t<div class='md_editor_sticker'>\n" +
+	// 表情
+	/*html += "\t\t<div class='md_editor_sticker'>\n" +
             "\t\t\t<div class='md_editor_sticker_images'></div>\n" +
             "\t\t\t<div class='md_editor_sticker_page'></div>\n" +
             "\t\t\t<div class='md_editor_sticker_footer'></div>\n" +
-            "\t\t</div>\n";
+            "\t\t</div>\n";*/
 
 	html += "\t</div>\n" +
 		"\t<div class='md_editor_container'>\n";
@@ -304,16 +316,26 @@ var md = {};
 
 	// CodeMirror
 	var mdeditor = CodeMirror.fromTextArea(editorArea[0], {
-		mode: 'markdown', //编辑器语言
+		//mode: 'markdown', //编辑器语言
+		mode: 'gfm',
 		lineNumbers: true, //显示行号
 		lineWrapping: true,	//代码折叠
+		styleActiveLine: true,
 		//theme: "default",//编辑器主题
-		theme: "base16-light",
+		//theme: "base16-light",
 		//快捷键
 		extraKeys: {
 					"Enter": "newlineAndIndentContinueMarkdownList",
 					"Alt-Space": "autocomplete",//ctrl-space唤起智能提示
 					"Ctrl-S": function (editor) {
+						/**
+						storageValue = localStorage.getItem(storageKey);
+						if (storageValue) {
+							editor.val(storageValue);
+						}
+						//保存到浏览器
+						localStorage.setItem(storageKey, content);
+						**/
 						console.log(editor.getValue());
 					},//保存
 					"Ctrl-Z":function (editor) {
@@ -376,6 +398,9 @@ var md = {};
 		  Prism.highlightElement(block);
 		  
 		});
+		
+		//保存到浏览器
+		localStorage.setItem(storageKey, content);
     }
 
 	/**
