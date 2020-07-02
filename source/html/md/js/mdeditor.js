@@ -309,7 +309,7 @@ var md = {};
       tables: true,
       breaks: true,  // '>' 换行，回车换成 <br>
       pedantic: false,
-      sanitize: true,
+      sanitize: false,// 消毒：意思是将html转义成&xxx等。
       smartLists: true,
       smartypants: false
     });
