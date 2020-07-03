@@ -21,6 +21,8 @@ var md = {};
        textareaContent = "md_editor_content";
     }
 	
+	var uploadFileName = "smfile";
+	
 	/**保存到浏览器*/
 	var storageKey = 'markdoc'
 	
@@ -157,7 +159,7 @@ var md = {};
 				html += "\t\t<span item='upload' title='文件上传'>\n" +
 					"\t\t\t<upload>\n" +
 					"\t\t\t\t<i class=\"fa fa-picture-o\"></i>\n" +
-					"\t\t\t\t<input type='file' name='file'/>" +
+					"\t\t\t\t<input type='file' name='"+uploadFileName+"'/>" +
 					"\t\t\t</upload>\n" +
 					"\t\t</span>\n";
 			},
@@ -274,6 +276,10 @@ var md = {};
 		}
 	});
 
+	//加载中
+	html += "<div class='loading hide'>\n"+
+			"<div class='gif'></div>\n</div>";
+		
 	// 表情
 	/*html += "\t\t<div class='md_editor_sticker'>\n" +
             "\t\t\t<div class='md_editor_sticker_images'></div>\n" +
@@ -523,9 +529,58 @@ var md = {};
     }
 
 	/**
-	 * 图片上传
+	 * SM.MS图片上传
 	 */
     function uploadImg(file, editor) {
+        var formData = new FormData();
+        var fileName = new Date().getTime() + "." + file.name.split(".").pop();
+        formData.append(uploadFileName, file, fileName);
+		//准备请求数据，显示模态框
+		$('div.loading').show();
+		
+        $.ajax({
+            url: 'https://sm.ms/api/v2/upload',
+            type: 'post',
+            data: formData,
+            cache: false,
+			contentType: false,
+			processData: false,
+            dataType: 'json',
+            success: function (res) {
+				var data = res.data;
+                if (res.success) {
+                    //var prefix = data.isImage ? "!" : "";
+
+                    var imgSize = "";
+
+                    if (data.width && data.height) {
+                        imgSize = " =" + data.width + "*" + data.height;
+                    }
+					str = "![" + data.filename + imgSize + "]" + "(" + data.url + ") ";
+					editor.replaceSelection(str);
+                } else {
+					//重复图片数据
+					if(res.code == 'image_repeated'){
+						str = "![img]" + "(" + res.images + ") ";
+						editor.replaceSelection(str);
+					}else{
+						alert(res.message);
+					}
+                }
+				//请求完成，隐藏模态框
+				$('div.loading').hide();
+            },
+			error: function () {
+				//请求完成，隐藏模态框
+				$('div.loading').hide();
+			}
+        });
+    }
+	
+	/**
+	 * 图片上传
+	 */
+    function uploadImg1(file, editor) {
         var formData = new FormData();
         var fileName = new Date().getTime() + "." + file.name.split(".").pop();
         formData.append('editormd-image-file', file, fileName);
