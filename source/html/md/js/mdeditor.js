@@ -305,13 +305,17 @@ var md = {};
     var markedRender = new marked.Renderer();
     marked.setOptions({
       renderer: markedRender,
-      gfm: true,
-      tables: true,
-      breaks: true,  // '>' 换行，回车换成 <br>
-      pedantic: false,
-      sanitize: false,// 消毒：意思是将html转义成&xxx等。
-      smartLists: true,
-      smartypants: false
+      gfm: true, //允许 Git Hub标准的markdown. 默认为true。
+      tables: true, //允许支持表格语法。该选项要求 gfm 为true。 默认为true。
+      breaks: true,  //允许回车换行。该选项要求 gfm 为true。 默认为false。
+      pedantic: false, //尽可能地兼容 markdown.pl的晦涩部分。不纠正原始模型任何的不良行为和错误。 默认为false。
+      sanitize: false,// 对输出进行过滤（清理），将忽略任何已经输入的html代码（标签） 默认为false。
+      smartLists: true, //使用比原生markdown更时髦的列表。 旧的列表将可能被作为pedantic的处理内容过滤掉. 默认为false。
+      smartypants: false, //使用更为时髦的标点，比如在引用语法中加入破折号。 默认为false。
+	  //使用 highlight 作为代码高亮
+	  /**highlight: function (code, lang) { 
+        return hljs.highlightAuto(code).value;
+	  }**/
     });
 
 	// CodeMirror
@@ -383,20 +387,21 @@ var md = {};
     function editorOnHandler(editor) {
 		var content = editor.getValue();// 获取编辑器输入内容
 		var html = marked(content);// 获取渲染后的html代码片段
-		
-		editorView.html(replaceMarkDownHTMLImg(html));
+
 		editorArea.val(content);
+		editorView.html(html);
 		
+		//处理img图片
+		/**editorView.html(replaceMarkDownHTMLImg(html));
 		var imgs = editorView.find('img');
 		imgs.load(function () {
 			setMaxImageSize(this);
-		});
+		});**/
 		
-		//显示行号
+		//Prism代码高亮 显示行号
 		editorView.find('pre').addClass("line-numbers").css("white-space", "pre-wrap");
 		editorView.find('pre code').each(function(i, block) {
 		  Prism.highlightElement(block);
-		  
 		});
 		
 		//保存到浏览器
