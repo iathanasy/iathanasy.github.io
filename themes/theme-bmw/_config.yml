@@ -140,3 +140,9 @@ friends:
     site: https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/ # 站点地址
     meta: Theme-BMW 中文文档 # 站点描述
     
+  -
+    nickname: 在线HTML  # 昵称
+    avatar: https://gravatar.loli.net/avatar/b20750c40cd911256ddbd76a7f7e724c # 头像链接
+    site: https://iathanasy.github.io/html/ed-html/ # 站点地址
+    meta: 在线HTML编辑器 # 站点描述
+    

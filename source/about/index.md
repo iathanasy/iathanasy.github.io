@@ -61,6 +61,7 @@ date: 2019-01-07 10:12:30
 - [在线加解密工具](http://tool.oschina.net/encrypt?type=2)
 - [Free-SS-SSR](https://dxxzst.github.io/Free-SS-SSR)
 - [在线文档生成](https://www.vuepress.cn/)
+- [在线HTML编辑器](https://iathanasy.github.io/html/ed-html/)
 
 
 ## 不错的资料
