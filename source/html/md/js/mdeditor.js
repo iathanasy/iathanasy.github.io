@@ -24,7 +24,7 @@ var md = {};
 	var uploadFileName = "smfile";
 	
 	/**保存到浏览器*/
-	var storageKey = 'markdoc'
+	var storageKey = 'markdown_key'
 	
 	//全部工具
 	var allTools = {
@@ -307,6 +307,20 @@ var md = {};
 	
 	editorSticker.css("top", editorToolbar.height() + 3);
 	
+	// 进来读取浏览器缓存
+	storageValue = localStorage.getItem(storageKey);
+	if (storageValue) {
+		var html = marked(storageValue);// 获取渲染后的html代码片段
+		editorArea.val(storageValue);
+		editorView.html(html);
+		
+		//Prism代码高亮 显示行号
+		editorView.find('pre').addClass("line-numbers").css("white-space", "pre-wrap");
+		editorView.find('pre code').each(function(i, block) {
+		  Prism.highlightElement(block);
+		});
+	}
+
 	// marked
     var markedRender = new marked.Renderer();
     marked.setOptions({
@@ -338,15 +352,11 @@ var md = {};
 					"Enter": "newlineAndIndentContinueMarkdownList",
 					"Alt-Space": "autocomplete",//ctrl-space唤起智能提示
 					"Ctrl-S": function (editor) {
-						/**
-						storageValue = localStorage.getItem(storageKey);
-						if (storageValue) {
-							editor.val(storageValue);
-						}
+						content = editor.getValue();
 						//保存到浏览器
 						localStorage.setItem(storageKey, content);
-						**/
-						console.log(editor.getValue());
+						
+						console.log(content);
 					},//保存
 					"Ctrl-Z":function (editor) {
 						editor.undo();
@@ -387,7 +397,6 @@ var md = {};
 		var height = percentage * ($preview.get(0).scrollHeight - $preview.get(0).offsetHeight);
 		$preview.scrollTop(height);
 	});
-
 
 	//代码高亮,图片处理
     function editorOnHandler(editor) {
