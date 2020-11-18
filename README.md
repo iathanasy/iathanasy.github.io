@@ -1,12 +1,13 @@
 # iathanasy.github.io
 ## hexo 的一些配置文件
 ### 新电脑如果要安装的话需要执行以下步骤
-  1.安装hexo：npm install -g hexo-cli。
-  2.clone远程仓库到本地 git clone -b hexo git@github.com:iathanasy/iathanasy.github.io.git。//注意：默认 git clone 命令只会复制 master 分支，这里需要用 -b 指明只克隆 hexo 分支。因为源代码都放在了hexo分支上，并不需要对master分支进行操作。
-  3.根据packge.json安装依赖npm install。 //注意此处不要用hexo init 不然会初始化
-  4.本地生成网站并开启博客服务器：hexo g & hexo s。如果一切正常，此时打开浏览器输入http://localhost:4000/已经可以看到博客正常运行了。
-  5.若报错需要执行：npm install hexo-deployer-git --save
-    sudo npm install hexo-server //或者  sudo npm install hexo-renderer-sass
+  1. 安装hexo：`npm install -g hexo-cli`。
+  2. clone远程仓库到本地 `git clone -b hexo git@github.com:iathanasy/iathanasy.github.io.git`。//注意：默认 `git clone` 命令只会复制 `master` 分支，这里需要用 `-b`指明只克隆 `hexo `分支。因为源代码都放在了`hexo`分支上，并不需要对`master`分支进行操作。
+  3. 根据`packge.json`安装依赖`npm install`。 //注意此处不要用`hexo init` 不然会初始化
+  4. 本地生成网站并开启博客服务器：`hexo g & hexo s`。如果一切正常，此时打开浏览器输入[http://localhost:4000/](http://localhost:4000/)已经可以看到博客正常运行了。
+  5. 若报错需要执行：`npm install hexo-deployer-git --save`
+    `sudo npm install hexo-server` //或者  `sudo npm install hexo-renderer-sass`
+  6. `cnpm i swig-templates`
   
 ### 发布新文章的时候操作
   1.	hexo new post "文章标题"  //创建新文章，然后可以在 source/_posts/ 目录下找到对应的文章并可以编辑。
